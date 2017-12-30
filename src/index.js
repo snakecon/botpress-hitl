@@ -131,6 +131,9 @@ module.exports = {
       db.getSession(req.params.sessionId)
       .then(session => {
         const event = {
+          user: {
+            id: session.userId
+          },
           type: 'text',
           platform: session.platform,
           raw: { to: session.userId, message: message },

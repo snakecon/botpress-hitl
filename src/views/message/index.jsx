@@ -38,7 +38,7 @@ export default class Message extends React.Component {
   renderContent() {
     const type = this.props.content.type
 
-    if (type === "message" || type === "text") {
+    if (type === "message" || type === "text" || type === "quick_reply") {
       return this.renderText()
     }
     else if (type === "image") {
@@ -90,6 +90,7 @@ export default class Message extends React.Component {
 
   render() {
     const renderedTypes = [
+      "quick_reply",
       "text",
       "message",
       "image",
